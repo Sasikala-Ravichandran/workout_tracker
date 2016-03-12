@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :exercise do
-    duration_in_min 1
-    workout "MyText"
-    workout_date "2016-03-11"
+    duration_in_min Faker::Number.number(2)
+    workout Faker::Lorem.word
+    workout_date Faker::Date.forward(1)
     user
   end
 end
