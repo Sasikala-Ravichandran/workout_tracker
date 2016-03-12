@@ -12,6 +12,7 @@ gem 'bootstrap-sass', '~>3.3.4.1'
 gem 'autoprefixer-rails', '~>5.2.0'
 gem 'devise', '~>3.5.1'
 gem 'jquery-ui-rails', '5.0.5'
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
   gem 'byebug'  
@@ -20,6 +21,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'guard-rspec', require: false
   gem "factory_girl_rails", "~> 4.0"
+  gem 'faker'
 end
 
 group :development do
@@ -30,8 +32,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '2.4.4'
-  gem 'faker'
+  gem 'capybara', '2.4.4'  
   gem 'shoulda-matchers', require: false
 end
 
