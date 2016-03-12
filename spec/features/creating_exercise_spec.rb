@@ -24,11 +24,16 @@ RSpec.feature "Creating Exercise" do
   end
 
   scenario "with invalid inputs" do
-    fill_in "Duration(min)", with: " "
-    fill_in "Workout Details", with: " "
-    fill_in "Activity date", with: "2015-08-07"
+    fill_in "Duration(min)", with: nil
+    fill_in "Workout Details", with: nil
+    fill_in "Activity date", with: nil
     click_button "Create Exercise"
 
     expect(page).to have_content("Exercise has not been created")
+    expect(page).to have_content("errors prohibited this exercise from being saved")
+    expect(page).to have_content("Duration in min can't be blank")
+    expect(page).to have_content("Duration in min is not a number")
+    expect(page).to have_content("Workout can't be blank")
+    expect(page).to have_content("Workout date can't be blank")
   end
 end
