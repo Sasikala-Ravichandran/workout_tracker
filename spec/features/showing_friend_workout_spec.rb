@@ -17,7 +17,7 @@ RSpec.feature "Showing friend's workout" do
     click_link @sara.full_name
 
     expect(page).to have_content(@sara.full_name + "'s Exercises")
-    expect(page).to have_content(@sara_exercisea.workout)
+    expect(page).to have_content(@sara_exercise.workout)
     expect(page).to have_css("div#chart")
   end
 
